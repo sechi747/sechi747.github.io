@@ -94,10 +94,4 @@ service-worker: true
 
 
 
-# Friends
-#friends: [
-    {
-        title: "知乎：INMYIDEA",
-        href: "https://www.zhihu.com/people/wan-qian-pi-nang" 
-    }
-]
+
