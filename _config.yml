@@ -17,11 +17,11 @@ sidebar-avatar: /img/touxiang.jpg      # use absolute URL, seeing it's used in b
 
 
 # SNS settings
-RSS: true
-weibo_username: 今天好像又多吃了
-zhihu_username: INMYIDEA
+RSS: false
+weibo_username: 3700082862/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1
+zhihu_username: wan-qian-pi-nang
 github_username: sechi747
-twitter_username: 747大魔王
+twitter_username: Hochfart747
 
 
 
