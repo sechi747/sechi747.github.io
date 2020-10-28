@@ -12,16 +12,16 @@ github_repo: "https://github.com/sechi747/sechi747.github.io.git" # you code rep
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "人生如钟摆，在痛苦与倦怠之间摆动。"
-sidebar-avatar: /img/about-someone.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/touxiang.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
-RSS: false
-# weibo_username:     今天好像又多吃了
-# zhihu_username:     INMYIDEA
-github_username:      sechi747
-# twitter_username:   747大魔王
+RSS: true
+weibo_username: 今天好像又多吃了
+zhihu_username: INMYIDEA
+github_username: sechi747
+twitter_username: 747大魔王
 
 
 
