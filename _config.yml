@@ -1,17 +1,17 @@
 # Site settings
 title: 凌云木
-SEOTitle: 凌云木
+SEOTitle: 凌云木|Sechi's Blog
 header-img: img/post-bg-desk.jpg
 email: 1109697968@qq.com
 description: "时人不识凌云木，直待凌云始道高。"
-keyword: "个人博客"
-url: "https://sechi747.github.io"          # your host, for absolute URL
+keyword: "凌云木, sechi，Sechi's Blog"
+url: "https://www.plantsechi.xyz"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/sechi747/sechi747.github.io.git" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "时人不识凌云木，直待凌云始道高。"
+sidebar-about-description: "人生如钟摆，在痛苦与倦怠之间摆动。"
 sidebar-avatar: /img/about-someone.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
