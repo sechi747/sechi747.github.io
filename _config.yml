@@ -9,11 +9,11 @@ url: "https://www.plantsechi.xyz"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/sechi747/sechi747.github.io.git" # you code repository
 
+
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "人生如钟摆，在痛苦与倦怠之间摆动。"
 sidebar-avatar: /img/touxiang.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
 
 
 # SNS settings
@@ -24,8 +24,6 @@ github_username: sechi747
 twitter_username: Hochfart747
 
 
-
-
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 permalink: pretty
@@ -34,12 +32,9 @@ exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
-
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
-
-
 
 
 # Markdown settings
@@ -50,7 +45,6 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
-
 
 
 # 评论系统
