@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Markdown语法
-subtitle:   初级入门
+subtitle:   基础学习
 date:       2020-10-28
 author:     sechi
 header-img: img/the-first.png
