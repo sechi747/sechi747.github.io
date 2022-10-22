@@ -12,6 +12,10 @@ const toggleDark = () => {
     class="!outline-none"
     @click="toggleDark"
   >
-    <div class="dark:i-carbon-moon i-carbon-sun" />
+    <div
+      opacity-75 transition duration-200 ease-in-out hover:opacity-100
+      class="dark:i-carbon-moon i-carbon-sun"
+      :class="isDark ? 'hover:text-white' : 'hover:text-amber'"
+    />
   </button>
 </template>

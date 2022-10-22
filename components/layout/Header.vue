@@ -5,9 +5,9 @@ const trainUrl = computed(() => isDark.value ? '/train-light.svg' : '/train.svg'
 
 <template>
   <div
-    w-full h-70px
-    px-20
-    flex justify-between items-center
+    w-full h-18
+    px-10
+    fbc
     bg="gray-300/20"
   >
     <div icon-btn>
@@ -19,7 +19,7 @@ const trainUrl = computed(() => isDark.value ? '/train-light.svg' : '/train.svg'
         alt="logo"
       >
     </div>
-    <div flex="~ 1" justify-center icon-btn>
+    <div fc flex-1 icon-btn>
       <img
         h-6
         w-150
@@ -29,9 +29,18 @@ const trainUrl = computed(() => isDark.value ? '/train-light.svg' : '/train.svg'
       >
     </div>
     <div grid gap-5 auto-flow-col items-center>
-      <icon class="i-carbon-book icon-btn" />
-      <icon class="i-carbon:ibm-cloud icon-btn" />
-      <icon class="i-carbon-logo-github icon-btn" />
+      <i
+        class="i-carbon-blog icon-btn"
+        :class="isDark ? 'hover:text-white' : 'hover:text-emerald-500'"
+      />
+      <i
+        class="i-carbon:pen-fountain icon-btn"
+        :class="isDark ? 'hover:text-white' : 'hover:text-emerald-500'"
+      />
+      <i
+        class="i-carbon-logo-github icon-btn"
+        :class="isDark ? 'hover:text-white' : 'hover:text-black'"
+      />
       <DarkToggle />
     </div>
   </div>

@@ -7,13 +7,14 @@ body {
 
 html {
   background: #fefefe;
+  color: #3b3b3b;
 }
 
-html.dark{
+html.dark {
   background: #1c1f24;
-  color: white;
+  color: #c8ccd0;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   --at-apply: w0;
 }
