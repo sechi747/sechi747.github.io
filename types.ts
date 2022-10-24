@@ -21,3 +21,24 @@ export interface User {
   created_at: string
   updated_at: string
 }
+
+export interface Article {
+  _id: string
+  _draft: boolean
+  _empty: boolean
+  _extension: string
+  _file: string
+  _path: string
+  _source: string
+  _type: string
+
+  id: number
+  title: string
+  description?: string
+  uid?: number
+  updateTime: string
+  createTime: string
+  slug: string
+  draft: boolean
+}
+
