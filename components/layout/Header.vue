@@ -27,10 +27,14 @@ const logoUrl = computed(() => isDark.value ? '/logo-light.svg' : '/logo.svg')
           :class="isDark ? 'hover:text-white' : 'hover:text-emerald-500'"
         />
       </NuxtLink>
-      <i
-        class="i-carbon:pen-fountain icon-btn"
-        :class="isDark ? 'hover:text-white' : 'hover:text-emerald-500'"
-      />
+
+      <NuxtLink to="/moments">
+        <i
+          class="i-carbon:pen-fountain icon-btn"
+          :class="isDark ? 'hover:text-white' : 'hover:text-emerald-500'"
+        />
+      </NuxtLink>
+
       <NuxtLink to="https://github.com/sechi747" target="_blank">
         <i
           class="i-carbon-logo-github icon-btn"
