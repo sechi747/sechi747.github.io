@@ -13,12 +13,7 @@ function sortArticles(list: Article[]) {
 
 <template>
   <div prose font-mono ma origin>
-    <h1 text-2xl md-text-3xl base mb4>
-      「 Posts 」
-    </h1>
-    <p ml-8 text-base base italic>
-      something useless but import for me
-    </p>
+    <DefaultHeader title="Posts" description="something useless but important for me" />
     <ContentList>
       <template #default="{ list }">
         <template v-for="article in sortArticles(list)" :key="article._id">
