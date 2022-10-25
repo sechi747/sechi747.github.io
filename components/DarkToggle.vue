@@ -7,15 +7,10 @@ const toggleDark = () => {
 </script>
 
 <template>
-  <button
+  <i
     :title="buttonTitle"
-    class="!outline-none"
+    class="icon-btn dark:i-carbon-moon i-carbon-sun"
+    :class="isDark ? 'hover:text-white' : 'hover:text-amber'"
     @click="toggleDark"
-  >
-    <div
-      opacity-75 transition duration-200 ease-in-out hover:opacity-100
-      class="dark:i-carbon-moon i-carbon-sun"
-      :class="isDark ? 'hover:text-white' : 'hover:text-amber'"
-    />
-  </button>
+  />
 </template>

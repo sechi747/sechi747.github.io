@@ -20,7 +20,7 @@ const logoUrl = computed(() => isDark.value ? '/logo-light.svg' : '/logo.svg')
         >
       </div>
     </NuxtLink>
-    <div grid gap-5 auto-flow-col items-center>
+    <div grid gap-5 auto-flow-col>
       <NuxtLink to="/posts">
         <i
           class="i-carbon-blog icon-btn"
