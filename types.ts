@@ -56,3 +56,8 @@ export interface JsonFile {
   [timestamp: string]: string | boolean
 }
 
+export interface Moment {
+  createTime: number
+  content: string
+}
+
