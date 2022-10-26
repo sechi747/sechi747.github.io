@@ -42,3 +42,17 @@ export interface Article {
   draft: boolean
 }
 
+export interface JsonFile {
+  _path: string
+  _draft: boolean
+  _partial: boolean
+  _locale: string
+  _id: string
+  _type: string
+  title: string
+  _source: string
+  _file: string
+  _extension: string
+  [timestamp: string]: string | boolean
+}
+
