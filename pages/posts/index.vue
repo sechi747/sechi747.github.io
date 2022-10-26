@@ -5,7 +5,7 @@ import type { Article } from '~/types'
 useTitle('PlantSechi | Posts')
 
 function sortArticles(list: Article[]) {
-  return list.sort((a, b) => {
+  return list.filter(a => a._extension === 'md').sort((a, b) => {
     return new Date(b.createTime).getTime() - new Date(a.createTime).getTime()
   })
 }
