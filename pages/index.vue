@@ -1,5 +1,9 @@
 <script lang="ts" setup>
+import { useTitle } from '@vueuse/core'
+
 const { data: user } = await useFetch('/api/user')
+
+useTitle('PlantSechi')
 </script>
 
 <template>
