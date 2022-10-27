@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     },
     markdown: {
       toc: {
-        depth: 3,
+        depth: 5,
       },
     },
     documentDriven: true,
