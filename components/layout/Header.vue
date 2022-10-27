@@ -23,6 +23,7 @@ const logoUrl = computed(() => isDark.value ? '/logo-light.svg' : '/logo.svg')
     <div grid gap-5 auto-flow-col>
       <NuxtLink to="/posts">
         <i
+          title="posts"
           class="i-carbon-blog icon-btn"
           :class="isDark ? 'hover:text-white' : 'hover:text-emerald-500'"
         />
@@ -30,6 +31,7 @@ const logoUrl = computed(() => isDark.value ? '/logo-light.svg' : '/logo.svg')
 
       <NuxtLink to="/moments">
         <i
+          title="moments"
           class="i-carbon:pen-fountain icon-btn"
           :class="isDark ? 'hover:text-white' : 'hover:text-emerald-500'"
         />
@@ -37,6 +39,7 @@ const logoUrl = computed(() => isDark.value ? '/logo-light.svg' : '/logo.svg')
 
       <NuxtLink to="https://github.com/sechi747" target="_blank">
         <i
+          title="github"
           class="i-carbon-logo-github icon-btn"
           :class="isDark ? 'hover:text-white' : 'hover:text-black'"
         />
