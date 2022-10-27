@@ -1,16 +1,24 @@
 <script setup lang="ts">
-const buttonTitle = computed(() => isDark.value ? 'switch to light mode' : 'switch to dark mode')
+const color = useColorMode()
 
-const toggleDark = () => {
-  isDark.value = !isDark.value
+const buttonTitle = ref('')
+
+nextTick(() => {
+  buttonTitle.value = color.value === 'dark' ? 'switch to light mode' : 'switch to dark mode'
+})
+
+watch(() => color.value, () => buttonTitle.value = color.value === 'dark' ? 'switch to light mode' : 'switch to dark mode')
+
+function toggleDark() {
+  color.preference = color.value === 'dark' ? 'light' : 'dark'
 }
 </script>
 
 <template>
   <i
     :title="buttonTitle"
-    class="icon-btn dark:i-carbon-moon i-carbon-sun"
-    :class="isDark ? 'hover:text-white' : 'hover:text-amber'"
+    class="icon-btn i-carbon-sun hover:text-amber"
+    dark="i-carbon-moon hover:text-white "
     @click="toggleDark"
   />
 </template>

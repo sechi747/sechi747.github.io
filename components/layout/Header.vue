@@ -1,5 +1,14 @@
 <script setup lang="ts">
-const logoUrl = computed(() => isDark.value ? '/logo-light.svg' : '/logo.svg')
+// color.value初始值为system，value更新后dom没有更新，原因未知
+const color = useColorMode()
+
+const logoUrl = ref('/logo.svg')
+
+nextTick(() => {
+  logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '/logo.svg'
+})
+
+watchEffect(() => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '/logo.svg')
 </script>
 
 <template>
@@ -10,38 +19,35 @@ const logoUrl = computed(() => isDark.value ? '/logo-light.svg' : '/logo.svg')
     bg="gray-300/20"
   >
     <NuxtLink to="/">
-      <div icon-btn>
-        <img
-          h-6
-          left-8
-          top-6
-          :src="logoUrl"
-          alt="logo"
-        >
-      </div>
+      <img
+        v-if="!color.unknown"
+        icon-btn
+        h-6
+        left-8
+        top-6
+        :src="logoUrl"
+        alt="logo"
+      >
     </NuxtLink>
     <div grid gap-5 auto-flow-col>
       <NuxtLink to="/posts">
         <i
           title="posts"
-          class="i-carbon-blog icon-btn"
-          :class="isDark ? 'hover:text-white' : 'hover:text-emerald-500'"
+          class="i-carbon-blog icon-btn hover:text-emerald-500 dark:hover:text-white"
         />
       </NuxtLink>
 
       <NuxtLink to="/moments">
         <i
           title="moments"
-          class="i-carbon:pen-fountain icon-btn"
-          :class="isDark ? 'hover:text-white' : 'hover:text-emerald-500'"
+          class="i-carbon:pen-fountain icon-btn hover:text-emerald-500 dark:hover:text-white"
         />
       </NuxtLink>
 
       <NuxtLink to="https://github.com/sechi747" target="_blank">
         <i
           title="github"
-          class="i-carbon-logo-github icon-btn"
-          :class="isDark ? 'hover:text-white' : 'hover:text-black'"
+          class="i-carbon-logo-github icon-btn hover:text-black dark:hover:text-white"
         />
       </NuxtLink>
       <DarkToggle />
