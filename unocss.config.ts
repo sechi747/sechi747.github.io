@@ -14,6 +14,10 @@ export default defineConfig({
     ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-250 ease-in-out hover:opacity-100'],
 
+    ['text', 'text-text-default dark:text-text-dark'],
+    ['bg', 'trans bg-bg-default dark:bg-bg-dark'],
+    ['base', 'trans text'],
+
     ['pr', 'relative'],
     ['pa', 'absolute'],
     ['pf', 'fixed'],
@@ -35,6 +39,8 @@ export default defineConfig({
     ['fac', 'flex justify-around items-center'],
     ['fic', 'flex items-center'],
     ['fccc', 'flex justify-center items-center flex-col'],
+
+    ['header-anchor', 'float-left mt-[0.125em] ml-[-0.8em] pr-[0.2em] text-[0.85em] op-0 group-hover-op-60 fw-600'],
   ],
   theme: {
     fontFamily: {
@@ -61,7 +67,25 @@ export default defineConfig({
     presetIcons({
       scale: 1.2,
     }),
-    presetTypography(),
+    presetTypography({
+      cssExtend: {
+        'a': {
+          'text-decoration-color': 'rgba(38, 166, 154,0.4);',
+        },
+        'a:hover': {
+          'text-decoration-color': 'rgba(38, 166, 154,0.7);',
+        },
+        'pre': {
+          background: '#23272d !important',
+        },
+        'code': {
+          color: 'rgb(38, 166, 154,0.8)',
+        },
+        'blockquote': {
+          'border-left': '0.25em solid rgb(38, 166, 154)',
+        },
+      },
+    }),
     presetWebFonts({
       fonts: {
         sans: 'DM Sans',

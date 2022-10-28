@@ -13,17 +13,17 @@ updateTime: 2022-10-17T07:02:48.054Z
 
 整个部署过程我都是使用 root 用户进行操作，所以不会有权限问题，但如果你是使用其他用户进行操作，则需要注意权限问题，适时给命令加上 `sudo` 前缀
 
-#### 安装 npm
+### 安装 npm
 
 `apt install npm`
 
 `npm config set registry https://registry.npmmirror.com` 配置国内 npm 镜像
 
-#### 安装 n
+### 安装 n
 
 `npm i -g n`
 
-#### 使用 n 安装 node
+### 使用 n 安装 node
 
 `n lts`  安装 node 的长期支持版
 
@@ -31,11 +31,11 @@ updateTime: 2022-10-17T07:02:48.054Z
 
 `n` 切换当前 node 版本，切换的同时 npm 版本也会改变。可以通过 `node -v` 查看当前 node 版本
 
-#### 安装 pm2
+### 安装 pm2
 
 `npm i -g pm2`
 
-#### 安装并配置 git
+### 安装并配置 git
 
 1. `apt install git`
 
@@ -71,14 +71,14 @@ User git
 
 然后再进行 `git` 操作就不会有问题了。造成这个现象的原因暂时不清楚，等有空再细查吧。
 
-#### 安装 Nginx
+### 安装 Nginx
 
 此处安装的 Nginx 版本为：nginx/1.18.0 (Ubuntu)
 
 1. `apt install nginx` 安装 Nginx
 2. `service nginx start` 启动 Nginx
 
-#### 安装 MySQL
+### 安装 MySQL
 
 其实我的博客项目并不涉及数据库，但是为了熟悉 Linux 操作还是装上吧~
 
@@ -93,7 +93,7 @@ User git
 7. `vim /etc/mysql/mysql.conf.d/mysqld.cnf` 将里面的`bind-address` 和 `mysqlx-bind-address` 修改为 `0.0.0.0`
 8. `systemctl restart mysql` 重启 MySQL 服务
 
-#### 安装 Docker
+### 安装 Docker
 
 docker 肯定是会用到的，虽然我现在没用到~ 这里直接把官网的安装教程搬过来
 
