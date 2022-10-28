@@ -14,6 +14,7 @@ export default defineConfig({
     ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-250 ease-in-out hover:opacity-100'],
 
+    ['trans', 'transition-all-250 ease-linear'],
     ['text', 'text-text-default dark:text-text-dark'],
     ['bg', 'trans bg-bg-default dark:bg-bg-dark'],
     ['base', 'trans text'],
