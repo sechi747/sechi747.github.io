@@ -53,14 +53,14 @@ onMounted(() => {
 <template>
   <div pf right-10 text-sm hidden lg-block>
     <ul v-if="toc && toc.links" ref="tocRef" list-none>
-      <li>On this page</li>
+      <li>Table of contents</li>
       <li v-for="link in toc.links" :key="link.text">
-        <a op-60 hover-op-100 no-underline :href="`#${link.id}`">
+        <a op-70 hover-op-100 no-underline :href="`#${link.id}`">
           {{ link.text }}
         </a>
         <ul v-if="link.children && link.children.length" my-1 list-none>
           <li v-for="child in link.children" :key="child.text">
-            <a :href="`#${child.id}`" no-underline op-60 hover-op-100>
+            <a :href="`#${child.id}`" no-underline op-70 hover-op-100>
               {{ child.text }}
             </a>
           </li>

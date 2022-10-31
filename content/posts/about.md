@@ -7,13 +7,13 @@ updateTime: 2022-10-17T07:02:48.054Z
 ---
 :ArticleToc
 :ArticleHeader
-## 前置工作
+# 前置工作
 
 部署使用的 Ubuntu 版本：Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-96-generic x86_64)
 
 整个部署过程我都是使用 root 用户进行操作，所以不会有权限问题，但如果你是使用其他用户进行操作，则需要注意权限问题，适时给命令加上 `sudo` 前缀
 
-### 安装 npm
+## 安装 npm
 
 `apt install npm`
 
