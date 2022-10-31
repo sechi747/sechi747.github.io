@@ -1,5 +1,5 @@
 .prose, [prose=""]{
-  max-width: 75ch !important;
+  max-width: 85ch !important;
 }
 
 :is([prose=""],.prose) :where(p):not(:where(.not-prose,.not-prose *)){
