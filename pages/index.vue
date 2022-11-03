@@ -7,7 +7,7 @@ useTitle('PlantSechi')
 </script>
 
 <template>
-  <div prose font-mono ma origin>
+  <div prose font-mono ma mt-10>
     <div flex flex-col items-center md="gap-10 flex-row">
       <img
         w-30
