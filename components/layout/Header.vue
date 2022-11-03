@@ -16,7 +16,9 @@ watchEffect(() => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '
     w-full h-18
     px-10
     fbc
-    bg="gray-300/20"
+    bg
+    border="b-2 dashed gray-200/80 important-dark:gray-200/40"
+    fixed z-10
   >
     <NuxtLink to="/">
       <img
