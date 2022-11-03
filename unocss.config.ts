@@ -41,7 +41,7 @@ export default defineConfig({
     ['fic', 'flex items-center'],
     ['fccc', 'flex justify-center items-center flex-col'],
 
-    ['header-anchor', 'float-left mt-[0.125em] ml-[-0.8em] pr-[0.2em] text-[0.85em] op-0 group-hover-op-60 fw-600'],
+    ['header-anchor', 'float-left ml-[-0.8em] pr-[0.2em] text-[0.85em] op-0 group-hover-op-60 fw-600'],
   ],
   theme: {
     fontFamily: {
@@ -78,9 +78,6 @@ export default defineConfig({
         },
         'pre': {
           background: '#23272d !important',
-        },
-        'code': {
-          color: 'rgb(38, 166, 154,0.8)',
         },
         'blockquote': {
           'border-left': '0.25em solid rgb(38, 166, 154)',
