@@ -3,7 +3,8 @@ defineProps<{ id: string }>()
 </script>
 
 <template>
-  <h1 :id="id" text-3xl class="group">
+  <a :id="id" class="relative -top-40px block h-0 overflow-hidden" />
+  <h1 text-3xl class="group">
     {{ id }}
     <a header-anchor no-underline :href="`#${id}`">
       #
