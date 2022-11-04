@@ -13,12 +13,12 @@ watchEffect(() => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '
 
 <template>
   <div
-    w-full h-18
+    w-full h-14
     px-10
     fbc
-    bg
-    border="b-2 dashed gray-200/80 important-dark:gray-200/40"
-    fixed z-10
+    border="b-1 gray-200/50 important-dark:gray-200/20"
+    fixed left-0 right-0 top-0 z-10
+    backdrop-blur-xl backdrop-saturate-150
   >
     <NuxtLink to="/">
       <img
