@@ -11,6 +11,17 @@ export default defineNuxtConfig({
     reactivityTransform: true,
   },
 
+  app: {
+    head: {
+      htmlAttrs: { lang: 'zh-CN' },
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'author', content: 'sechi' },
+        { name: 'description', content: 'PlantSechi is a personal blog which is focus on front-end.' },
+      ],
+    },
+  },
+
   content: {
     highlight: {
       theme: 'vitesse-dark',
