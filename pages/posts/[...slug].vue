@@ -6,6 +6,6 @@
         <p>It looks like this page has gotten lost.</p>
       </template>
     </ContentDoc>
-    <!-- <Back /> -->
+    <BackTop />
   </article>
 </template>
