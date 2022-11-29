@@ -46,7 +46,7 @@ useTitle('PlantSechi')
     </div>
 
     <p>
-      👋 Hi there I'm Siqi Chen (Sechi). A novice Front-end Engineer
+      👋 Hi there I'm Siqi Chen (Sechi). A novice Front-end Engineer.
     </p>
     <p>✨ Focusing on Vue related ecology.</p>
     <p>🧐 I'm also learning TypeScript, Node.js and React recently. </p>
