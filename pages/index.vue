@@ -18,7 +18,7 @@ useTitle('PlantSechi')
         alt="github_account_avatar"
       >
       <div>
-        <h1 fic justify-center md="justify-start">
+        <h1 fic justify-center base md="justify-start">
           {{ user?.name }}
         </h1>
         <p text-lg text-center md="text-left">
@@ -26,15 +26,15 @@ useTitle('PlantSechi')
         </p>
 
         <div my-4 fic justify-center md="justify-start">
-          <div i-carbon-user-favorite-alt-filled mr2 />
-          <span>
+          <div i-carbon-user-favorite-alt-filled mr2 base />
+          <span base>
             {{ user?.followers }}
             <span class="text-xs">
               followers
             </span>
           </span>
-          <span mx-2>·</span>
-          <span>
+          <span mx-2 base>·</span>
+          <span base>
             {{ user?.following }}
             <span class="text-xs">
               following

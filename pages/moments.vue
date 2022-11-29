@@ -29,10 +29,10 @@ const resolveList = computed<Moment[]>(() => {
       transition-all duration-500 ease-in-out
       hover:shadow
     >
-      <div text-lg md-text-xl text-left>
+      <div text-lg md-text-xl text-left base>
         {{ item.content }}
       </div>
-      <div self-end italic fic text-sm text-gray4>
+      <div self-end italic fic text-sm text-gray4 base>
         {{ new Date(item.createTime).toDateString() }}
       </div>
     </div>
