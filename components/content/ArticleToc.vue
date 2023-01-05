@@ -53,7 +53,9 @@ onMounted(() => {
 <template>
   <div pf right-10 text-sm hidden lg-block>
     <ul v-if="toc && toc.links" ref="tocRef" list-none>
-      <li>Table of contents</li>
+      <li font-italic>
+        Table of Contents
+      </li>
       <li v-for="link in toc.links" :key="link.text">
         <a op-70 hover-op-100 no-underline :href="`#${link.id}`">
           {{ link.text }}
