@@ -7,6 +7,7 @@ const { visible, scrollToTop } = useBackTop(1000)
     <div
       v-show="visible"
       ref="backRef"
+      base
       fixed right-40px bottom-40px
       w-40px h-40px rounded shadow-md fcc
       icon-btn z-10 text-20px
