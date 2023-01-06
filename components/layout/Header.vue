@@ -1,14 +1,13 @@
 <script setup lang="ts">
-// color.value初始值为system，value更新后dom没有更新，原因未知
-const color = useColorMode()
+import { useDarkToggle } from '@/composables/useDarkToggle'
+
+const { color } = useDarkToggle()
 
 const logoUrl = ref('/logo.svg')
 
-nextTick(() => {
-  logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '/logo.svg'
-})
+nextTick(() => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '/logo.svg')
 
-watchEffect(() => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '/logo.svg')
+watch(() => color.value, () => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '/logo.svg')
 </script>
 
 <template>
@@ -22,7 +21,6 @@ watchEffect(() => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '
   >
     <NuxtLink to="/">
       <img
-        v-if="!color.unknown"
         icon-btn
         h-6
         left-8
