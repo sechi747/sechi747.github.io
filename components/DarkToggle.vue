@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { useDarkToggle } from '@/composables/useDarkToggle'
-
-const { color, toggleDark } = useDarkToggle()
+const color = useGlobalColorMode()
 
 const buttonTitle = ref('')
 
-nextTick(() => buttonTitle.value = color.value === 'dark' ? 'switch to light mode' : 'switch to dark mode')
+const toggleColor = () => color.value = color.value === 'dark' ? 'light' : 'dark'
 
-watch(() => color.value, () => buttonTitle.value = color.value === 'dark' ? 'switch to light mode' : 'switch to dark mode')
+watchEffect(() => nextTick(() => buttonTitle.value = color.value === 'dark' ? 'switch to light mode' : 'switch to dark mode'))
 </script>
 
 <template>
@@ -15,6 +13,6 @@ watch(() => color.value, () => buttonTitle.value = color.value === 'dark' ? 'swi
     :title="buttonTitle"
     class="icon-btn i-carbon-sun hover:text-amber"
     dark="i-carbon-moon hover:text-white "
-    @click="toggleDark"
+    @click="toggleColor"
   />
 </template>

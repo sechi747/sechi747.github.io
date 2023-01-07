@@ -1,13 +1,9 @@
 <script setup lang="ts">
-import { useDarkToggle } from '@/composables/useDarkToggle'
-
-const { color } = useDarkToggle()
+const color = useGlobalColorMode()
 
 const logoUrl = ref('/logo.svg')
 
-nextTick(() => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '/logo.svg')
-
-watch(() => color.value, () => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '/logo.svg')
+watchEffect(() => nextTick(() => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '/logo.svg'))
 </script>
 
 <template>
