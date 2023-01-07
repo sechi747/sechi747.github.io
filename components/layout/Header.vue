@@ -3,7 +3,11 @@ const color = useGlobalColorMode()
 
 const logoUrl = ref('/logo.svg')
 
-watchEffect(() => nextTick(() => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '/logo.svg'))
+watch(
+  () => color.value,
+  () => nextTick(() => logoUrl.value = color.value === 'dark' ? '/logo-light.svg' : '/logo.svg'),
+  { immediate: true },
+)
 </script>
 
 <template>

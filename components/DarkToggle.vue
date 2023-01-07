@@ -5,7 +5,11 @@ const buttonTitle = ref('')
 
 const toggleColor = () => color.value = color.value === 'dark' ? 'light' : 'dark'
 
-watchEffect(() => nextTick(() => buttonTitle.value = color.value === 'dark' ? 'switch to light mode' : 'switch to dark mode'))
+watch(
+  () => color.value,
+  () => nextTick(() => buttonTitle.value = color.value === 'dark' ? 'switch to light mode' : 'switch to dark mode'),
+  { immediate: true },
+)
 </script>
 
 <template>
