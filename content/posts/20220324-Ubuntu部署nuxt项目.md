@@ -1,29 +1,29 @@
 ---
-title: "test post"
+title: "从零开始在 Ubuntu 上部署 Nuxt 项目"
 description: "This is a description of the post."
-uid: 501
-createTime: 2022-10-17T07:02:48.054Z
-updateTime: 2022-10-17T07:02:48.054Z
+uid: 502
+createTime: 2022/03/24 15:58:00
+updateTime: 2022/03/28 10:05:00
+tag: ['网站部署']
 ---
 :ArticleToc
 :ArticleHeader
-# 前置工作
 
+## 前置工作
 部署使用的 Ubuntu 版本：Ubuntu 20.04.4 LTS (GNU/Linux 5.4.0-96-generic x86_64)
 
 整个部署过程我都是使用 root 用户进行操作，所以不会有权限问题，但如果你是使用其他用户进行操作，则需要注意权限问题，适时给命令加上 `sudo` 前缀
-
-## 安装 npm
+#### 安装 npm
 
 `apt install npm`
 
 `npm config set registry https://registry.npmmirror.com` 配置国内 npm 镜像
 
-### 安装 n
+#### 安装 n
 
 `npm i -g n`
 
-### 使用 n 安装 node
+#### 使用 n 安装 node
 
 `n lts`  安装 node 的长期支持版
 
@@ -31,11 +31,11 @@ updateTime: 2022-10-17T07:02:48.054Z
 
 `n` 切换当前 node 版本，切换的同时 npm 版本也会改变。可以通过 `node -v` 查看当前 node 版本
 
-### 安装 pm2
+#### 安装 pm2
 
 `npm i -g pm2`
 
-### 安装并配置 git
+#### 安装并配置 git
 
 1. `apt install git`
 
@@ -71,14 +71,13 @@ User git
 
 然后再进行 `git` 操作就不会有问题了。造成这个现象的原因暂时不清楚，等有空再细查吧。
 
-### 安装 Nginx
-
+#### 安装 Nginx
 此处安装的 Nginx 版本为：nginx/1.18.0 (Ubuntu)
 
 1. `apt install nginx` 安装 Nginx
 2. `service nginx start` 启动 Nginx
 
-### 安装 MySQL
+#### 安装 MySQL
 
 其实我的博客项目并不涉及数据库，但是为了熟悉 Linux 操作还是装上吧~
 
@@ -88,18 +87,18 @@ User git
 2. `systemctl status mysql.service` 看一下有没有安装成功
 3. `mysql -u root -p` 因为安装时并没有要求设置密码，所以密码默认为空，直接敲回车就能进入控制台了
 4. `use mysql;` 切换到 mysql 数据库
-5. `alter user 'root'@'localhost' identified with mysql_native_password by '密码';`  修改 root 账号的密码加密方式和密码，这样就可以在客户端使用密码连接数据库了
+5.  `alter user 'root'@'localhost' identified with mysql_native_password by '密码';`  修改 root 账号的密码加密方式和密码，这样就可以在客户端使用密码连接数据库了
 6. `grant all on *.* to 'root'@'localhost';` 使外网可以访问到数据库
 7. `vim /etc/mysql/mysql.conf.d/mysqld.cnf` 将里面的`bind-address` 和 `mysqlx-bind-address` 修改为 `0.0.0.0`
 8. `systemctl restart mysql` 重启 MySQL 服务
 
-### 安装 Docker
+#### 安装 Docker
 
 docker 肯定是会用到的，虽然我现在没用到~ 这里直接把官网的安装教程搬过来
 
 此处安装的 Docker 版本为：20.10.14, build a224086
 
-1. 安装一些必要的包
+1.  安装一些必要的包
 
    ```bash
    apt update
@@ -130,19 +129,19 @@ docker 肯定是会用到的，虽然我现在没用到~ 这里直接把官网�
 
 6. 配置 docker 镜像加速源
 
-   ```shell
-   vim /etc/docker/daemon.json
-   
-   #在文件中添加以下内容
-   {
-      "registry-mirrors": [
-          "https://mirror.ccs.tencentyun.com"
-     ]
-   }
-   
-   #添加完成后执行下面的命令重启 docker 服务器
-   systemctl restart docker
-   ```
+    ```shell
+    vim /etc/docker/daemon.json
+    
+    #在文件中添加以下内容
+    {
+       "registry-mirrors": [
+           "https://mirror.ccs.tencentyun.com"
+      ]
+    }
+    
+    #添加完成后执行下面的命令重启 docker 服务器
+    systemctl restart docker
+    ```
 
    由于 DockerHub 部署在国外，如果直接使用 `docker pull` 拉取镜像速度会比较慢，所以推荐配置一下 Docker镜像加速源，这里我选择的是腾讯云提供的加速源。
 

@@ -2,8 +2,9 @@
 const { page } = useContent()
 
 const title = computed(() => page.value.title)
-const time = computed(() => new Date(page.value.createTime).toDateString())
-const timeAgo = useTimeAgo(new Date(page.value.createTime)).value.replace('"', '')
+
+const createTime = computed(() => new Date(page.value.createTime).toDateString())
+const createTimeAgo = useTimeAgo(new Date(page.value.createTime)).value.replace('"', '')
 
 useContentHead(page)
 </script>
@@ -14,7 +15,8 @@ useContentHead(page)
       {{ title }}
     </h1>
     <p important-text-op-70>
-      {{ time }} <sub ml-2 bottom-0>{{ timeAgo }}</sub>
+      {{ createTime }}
+      <sub ml-2 bottom-0>Posted {{ createTimeAgo }}</sub>
     </p>
   </div>
 </template>
