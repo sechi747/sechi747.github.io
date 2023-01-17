@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useTitle } from '@vueuse/core'
 import type { JsonFile, Moment } from '~~/types'
 
-useTitle('PlantSechi | Moments')
+useHead({ title: 'PlantSechi | Moments' })
 
 const { data } = await useAsyncData('moments', () => queryContent<JsonFile>('/moments').findOne())
 

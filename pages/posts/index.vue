@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { useTitle } from '@vueuse/core'
 import type { Article } from '~/types'
 
-useTitle('PlantSechi | Posts')
+useHead({ title: 'PlantSechi | Posts' })
 
 function sortArticles(list: Article[]) {
   return list.filter(a => a._extension === 'md').sort((a, b) => {
