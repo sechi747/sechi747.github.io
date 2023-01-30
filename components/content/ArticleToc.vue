@@ -3,7 +3,11 @@ const { toc } = useContent()
 const router = useRouter()
 const tocRef = ref()
 
+const hasToc = computed(() => toc.value?.links && toc.value.links.length > 0)
+
 onMounted(() => {
+  if (!hasToc.value)
+    return
   const navigate = () => {
     if (location.hash) {
       document.querySelector(decodeURIComponent(location.hash))
@@ -52,7 +56,7 @@ onMounted(() => {
 
 <template>
   <div pf right-10 text-sm hidden lg-block>
-    <ul v-if="toc && toc.links" ref="tocRef" list-none>
+    <ul v-if="hasToc" ref="tocRef" list-none>
       <li font-italic>
         Table of Contents
       </li>
