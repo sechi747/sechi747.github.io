@@ -5,7 +5,7 @@ defineProps<{ id: string }>()
 <template>
   <a :id="id" class="relative -top-40px block h-0 overflow-hidden" />
   <h3 text-xl class="group">
-    {{ id }}
+    <slot />
     <a header-anchor no-underline :href="`#${id}`">
       #
     </a>
