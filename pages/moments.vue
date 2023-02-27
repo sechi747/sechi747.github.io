@@ -5,7 +5,7 @@ useHead({ title: 'PlantSechi | Moments' })
 
 const { data } = await useAsyncData('moments', () => queryContent<JsonFile>('/moments').findOne())
 
-const resolveList = computed<Moment[]>(() => {
+const parseList = computed<Moment[]>(() => {
   const momentsList: Moment[] = []
   for (const [key, value] of Object.entries(data.value as JsonFile)) {
     if (/^\d{13}/.test(key))
@@ -19,9 +19,9 @@ const resolveList = computed<Moment[]>(() => {
   <div prose font-mono ma origin>
     <DefaultHeader title="Moments" description="try to catch something fleeting" />
     <div
-      v-for="(item, index) of resolveList"
+      v-for="(item, index) of parseList"
       :key="item.createTime"
-      :class="index !== resolveList.length - 1 ? 'mb-6' : ''"
+      :class="index !== parseList.length - 1 ? 'mb-6' : ''"
       fb flex-col
       w-full min-h-24 px-8 pt-6 pb-2
       border="~ 2  gray opacity-40 hover:opacity-80"
