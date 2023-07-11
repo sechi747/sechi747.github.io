@@ -50,6 +50,7 @@ useHead({ title: 'PlantSechi' })
     <p>🧐 I'm also learning TypeScript, Node.js and React recently. </p>
     <p>👾 I'm currently interested in Overwatch2 (but it will gone soon😅). </p>
     <p>🎮 Welcome to add my steam friends! My SteamID is 76561198863705753</p>
+    <p>🎹 Currently learning piano by myself.</p>
 
     <img width="450" height="170" alt="steam_card" src="https://card.yuy1n.io/card/76561198863705753/tokyonight,en,badge,text-9ea1a5,bg-2d3034">
   </div>
