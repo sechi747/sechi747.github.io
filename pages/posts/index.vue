@@ -28,7 +28,7 @@ function sortArticles(list: Article[]) {
               {{ article.title }}
             </h3>
             <div italic fic text-sm text-gray4 fw-normal>
-              {{ new Date(article.createTime).toDateString() }}
+              {{ new Date(article.updateTime).toDateString() }}
             </div>
           </nuxt-link>
         </template>
