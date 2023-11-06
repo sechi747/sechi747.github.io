@@ -28,8 +28,8 @@ export default defineNuxtConfig({
     },
     markdown: {
       toc: {
-        depth: 3,
-        searchDepth: 3,
+        depth: 4,
+        searchDepth: 4,
       },
       // anchorLinks: {
       //   depth: 3,

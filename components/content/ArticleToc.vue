@@ -69,6 +69,7 @@ onMounted(() => {
         >
           {{ link.text }}
         </a>
+
         <ul v-if="link.children && link.children.length" my-1 list-none>
           <li v-for="child in link.children" :key="child.text">
             <a
@@ -79,6 +80,19 @@ onMounted(() => {
             >
               {{ child.text }}
             </a>
+
+            <ul v-if="child.children && child.children.length" my-1 list-none>
+              <li v-for="subChild in child.children" :key="subChild.text">
+                <a
+                  :href="`#${subChild.id}`"
+                  op-70 hover-op-100
+                  inline-block no-underline
+                  max-w-90 truncate
+                >
+                  {{ subChild.text }}
+                </a>
+              </li>
+            </ul>
           </li>
         </ul>
       </li>
