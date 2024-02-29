@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import type { JsonFile, Moment } from '~~/types'
 
+definePageMeta({
+  validate: async () => {
+    return false
+  },
+})
+
 useHead({ title: 'PlantSechi | Moments' })
 
 const { data } = await useAsyncData('moments', () => queryContent<JsonFile>('/moments').findOne())

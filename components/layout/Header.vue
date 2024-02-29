@@ -37,12 +37,12 @@ watch(
         />
       </NuxtLink>
 
-      <NuxtLink to="/moments">
+      <!-- <NuxtLink to="/moments">
         <i
           title="moments"
           class="i-carbon:pen-fountain icon-btn hover:text-emerald-500 dark:hover:text-white"
         />
-      </NuxtLink>
+      </NuxtLink> -->
 
       <NuxtLink to="https://github.com/sechi747" target="_blank">
         <i
