@@ -65,7 +65,7 @@ onMounted(() => {
           :href="`#${link.id}`"
           op-70 hover-op-100
           inline-block no-underline
-          max-w-90 truncate
+          max-w-60 truncate
         >
           {{ link.text }}
         </a>
@@ -76,7 +76,7 @@ onMounted(() => {
               :href="`#${child.id}`"
               op-70 hover-op-100
               inline-block no-underline
-              max-w-90 truncate
+              max-w-60 truncate
             >
               {{ child.text }}
             </a>
@@ -87,7 +87,7 @@ onMounted(() => {
                   :href="`#${subChild.id}`"
                   op-70 hover-op-100
                   inline-block no-underline
-                  max-w-90 truncate
+                  max-w-60 truncate
                 >
                   {{ subChild.text }}
                 </a>
