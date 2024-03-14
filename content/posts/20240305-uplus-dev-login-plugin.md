@@ -9,7 +9,7 @@ tag: ['Vue', '开源']
 :ArticleToc
 :ArticleHeader
 
-# 背景
+## 背景
 
 先说一个场景：xx平台的生产环境出现了一个 bug，而这个 bug 必须使用特定账号才能复现，在不向用户要密码的前提下我们只能使用模拟登录来排查。但如果在生产环境的管理后台使用模拟登录只能跳转到xx平台的生产环境，如果想对代码进行 debug 就只能本地启动后台管理项目，然后修改模拟登录部分的代码，再跳转到本地启动好的xx平台项目。所以有没有一种可能，我们只需要写好一个组件放到xx项目里就能完成模拟登录操作？
 
@@ -23,7 +23,7 @@ tag: ['Vue', '开源']
 
 
 
-# 搭建框架
+## 搭建框架
 
 鉴于组件的逻辑和 UI 并不复杂，我们应该尽可能减少代码的外部依赖，UI 使用原生的 css 完成，接口请求使用 fetch，打包工具选择轻量级的 unbuild，项目使用 typescript + eslint 来规范代码。此外我们还需要一个 playground 目录来进行调试，可以直接使用 vite 的 vue-ts 模板来快速生成并在 `pnpm-workspace.yaml`中将其设为子包。
 
@@ -131,7 +131,7 @@ export default defineBuildConfig({
 
 至此，基本框架就已经完成了，可以正式开始踩坑之路了
 
-# vue-demi 基本用法
+## vue-demi 基本用法
 
 vue-demi 使用起来还算简单，和 Vue3 的组合式写法基本一致。
 
@@ -207,9 +207,9 @@ export const Test = defineComponent({
 
 虽然写起来比较麻烦，但好歹能跑起来。在我写完了几个组件后，我尝试在 playground 中运行，不出意外运行地很顺利，于是我信心满满地把包发布到了 npm，并装进了 front 项目里。随着我内心怒喊一句：front, 启动！果然，毫不意外地出了点意外。
 
-# 踩坑记录
+## 踩坑记录
 
-## 坑1
+### 坑1
 
 第一位出场的选手就是重量级：组件上绑定的点击事件无法触发并且 input 框里的 placeholder 不见了。
 
@@ -290,7 +290,7 @@ h(
 ),
 ```
 
-## 坑2
+### 坑2
 
 第二个坑和第一个坑其实类似，也是一个兼容性问题：组件的 slot 没有渲染。
 
@@ -317,7 +317,7 @@ export function transformVNodeSlots(slots: Record<string, any>, name = 'default'
 h(UserTable, transformVNodeSlots(this.slots))
 ```
 
-## 坑3
+### 坑3
 
 接下来向我们走来的这位选手很面熟啊，仔细一看，这不还是 h 函数吗！你小子挺能挖坑啊？！
 
@@ -350,7 +350,7 @@ h(
 )
 ```
 
-## 坑4
+### 坑4
 
 对于需要在项目中直接引用的组件，我们需要给它一个 **name** 属性，否则会在 Vue2 项目中报错。
 
@@ -368,9 +368,9 @@ export const Test = defineComponent({
 })
 ```
 
-# uplus-dev-login-plugin
+## uplus-dev-login-plugin
 
-## 使用
+### 使用
 
 接下来简单介绍一下 `uplus-dev-login-plugin`的使用方法：
 
@@ -445,7 +445,7 @@ export default {
 </template>
 ```
 
-## 效果预览
+### 效果预览
 
 引入后会在右下角出现一个悬浮的按钮，点击后会出现弹窗
 
@@ -461,6 +461,6 @@ export default {
 
 ![img](https://pic-go-20220331-1301395896.cos.ap-beijing.myqcloud.com/img/uplus-dev-login-4.png?q-sign-algorithm=sha1&q-ak=AKID95ooOF_cD-dSYPOfbRVPh7cEzjHGQ-eYVtxE4MSgmTWIa7z1k_kEplrps4ItJvgl&q-sign-time=1709642435;1709646035&q-key-time=1709642435;1709646035&q-header-list=host&q-url-param-list=ci-process&q-signature=fde2c7a3abd8c3f15aec8a080cc883a0ccc42f4c&x-cos-security-token=SJnk1hFasC3k7O6ESYC8RGt86C9gSRna75ebbc30639dc2440bf2abdef69e0dcce_SFq3xlv0ejVF_3Jdbd_4RQ4lppXc5S71c1Ge8rRtnGV2LftiF3WTvA4T294F1BXJ6aG9zSfWvqUtJa2hbLWQHuF4gwN5MF-HW8YL1yEshMaHp3G2vVBkfi7xmQ9SlLuZjCtyL-ANa135_m-IF9jGblFnHNMyu4w11NKfOLmDkQZIP_CksPl2jwhACXvD62ZFYeIl7bioyZOs3qw5HJpg&ci-process=originImage)
 
-## 源码地址
+### 源码地址
 
 https://github.com/sechi747/uplus-dev-login-plugin
