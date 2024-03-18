@@ -7,10 +7,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
   ],
 
-  experimental: {
-    reactivityTransform: true,
-  },
-
   app: {
     head: {
       htmlAttrs: { lang: 'zh-CN' },
@@ -25,6 +21,7 @@ export default defineNuxtConfig({
   content: {
     highlight: {
       theme: 'vitesse-dark',
+      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'bash', 'mdc', 'md', 'yaml', 'dart', 'java'],
     },
     markdown: {
       toc: {
