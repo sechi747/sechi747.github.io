@@ -143,7 +143,7 @@ import { defineComponent, computed, ref } from 'vue-demi'
 
 值得注意的是，使用 vue-demi 写 SFC 组件可能会出现各种各样的问题，所以我们干脆就使用 defineComponent + h 来编写组件，而这也为后续的踩坑埋下了伏笔。
 
-我们先简单看一下使用 defineComponent + h 和 SFC 实习一个组件有什么不同：
+我们先简单看一下使用 defineComponent + h 函数和 SFC 实现一个组件有什么不同：
 
 ```vue
 <script setup lang="ts">
@@ -203,7 +203,7 @@ export const Test = defineComponent({
 })
 ```
 
-通过对比我们可以发现，在 script 部分两者的差异并不大，差异主要体现在 template 部分的编写。我们需要在 render 函数里使用 h 函数来拼接各个节点，这也导致 render 函数的可读性远远不如 <template>。
+通过对比我们可以发现，在 script 部分两者的差异并不大，差异主要体现在 template 部分的编写。我们需要在 render 函数里使用 h 函数来拼接各个节点，这也导致 render 函数的可读性远远不如 template 语法。
 
 虽然写起来比较麻烦，但好歹能跑起来。在我写完了几个组件后，我尝试在 playground 中运行，不出意外运行地很顺利，于是我信心满满地把包发布到了 npm，并装进了 front 项目里。随着我内心怒喊一句：front, 启动！果然，毫不意外地出了点意外。
 
