@@ -4,5 +4,6 @@
     <main class="py-20 px-10 bg">
       <slot />
     </main>
+    <BackTop />
   </div>
 </template>
