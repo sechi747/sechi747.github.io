@@ -9,3 +9,7 @@
 :is([prose=""],.prose):not([origin=""],.origin) :where(p):not(:where(.not-prose,.not-prose *)){
   --at-apply: important-text-op-80;
 }
+
+:is([prose=""],.prose) :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::before, :is([prose=""],.prose) :where(:not(pre) > code):not(:where(.not-prose,.not-prose *))::after {
+  content: "";
+}
