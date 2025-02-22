@@ -1,9 +1,7 @@
 <script setup lang="ts">
-import type { Article } from '~/types'
+import type { ParsedContent } from '@nuxt/content/types'
 
-useHead({ title: 'PlantSechi | Posts' })
-
-function sortArticles(list: Article[]) {
+function sortArticles(list: ParsedContent[]) {
   return list.filter(a => a._extension === 'md').sort((a, b) => {
     return new Date(b.createTime).getTime() - new Date(a.createTime).getTime()
   })
